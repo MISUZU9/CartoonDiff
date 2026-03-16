@@ -15,12 +15,15 @@ Overall Framework of Our Model. The starting and ending frames are first process
 ## Installation
 1. Clone the repository
 2. Create a virtual environment
+```bash
 conda create -n CartoonDiff python=3.10.0
 conda activate CartoonDiff
+```
 3. Install required packages
+```bash
 pip3 install torch torchvision
 pip install -r requirements.txt
-
+```
 
 ## Dataset
 Download the dataset from Baidu Netdisk:  
