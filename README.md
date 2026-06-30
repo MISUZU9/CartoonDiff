@@ -1,5 +1,6 @@
 # CartoonDiff
-Code for the paper "Temporally-Coherent Diffusion for Cartoon Inbetweening: Noise Interpolation and Dual-Frame Matching", submitted to The Visual Computer.
+
+Code for the paper **"Temporally-Coherent Diffusion for Cartoon Inbetweening: Noise Interpolation and Dual-Frame Matching"**, submitted to *The Visual Computer*.
 
 ## Framework
 
@@ -7,34 +8,70 @@ Code for the paper "Temporally-Coherent Diffusion for Cartoon Inbetweening: Nois
 
 Overall Framework of Our Model. The starting and ending frames are first processed by an encoder and concatenated with interpolated initialization noise to form the input sequence, which is then fed into the denoising network. Throughout the denoising process, information from the starting and ending frames is embedded into the network as conditional guidance via the Dual-Frame Matching module. Finally, the denoised features are decoded to produce the generated video frames.
 
+## Code Version
+
+This repository corresponds to the version used in the submitted manuscript.
+
+**Git Commit:** `f97b3ccf3f7e7b4dd1c08cd57e42048232179708`
+
+## License
+
+This project is released under the **MIT License**. See the `LICENSE` file for details.
+
 ## Requirements
+
 - Python == 3.10.0
 - PyTorch >= 2.0.1
 - CUDA >= 11.7
 
 ## Installation
-1. Clone the repository
-2. Create a virtual environment
+
+1. Clone the repository.
+
+2. Create a virtual environment.
+
 ```bash
 conda create -n CartoonDiff python=3.10.0
 conda activate CartoonDiff
 ```
-3. Install required packages
+
+3. Install the required packages.
+
 ```bash
 pip3 install torch torchvision
 pip install -r requirements.txt
 ```
 
 ## Dataset
-Download the dataset from Baidu Netdisk:  
-Link: https://pan.baidu.com/s/1nPZRy6RLzTnN43guE5eRZw?pwd=9k8c  
+
+Download the dataset from Baidu Netdisk:
+
+Link: https://pan.baidu.com/s/1nPZRy6RLzTnN43guE5eRZw?pwd=9k8c
+
+A permanent archive of the project resources is also available on Zenodo:
+
+https://zenodo.org/records/19048937
 
 ## Model Weights
-Download the pre-trained model weights from Baidu Netdisk:  
-Link: https://pan.baidu.com/s/1Nt-gz69iRv7S4rm8HrVfvg?pwd=f8s6  
+
+Download the pre-trained model weights from Baidu Netdisk:
+
+Link: https://pan.baidu.com/s/1Nt-gz69iRv7S4rm8HrVfvg?pwd=f8s6
+
+## Training
+
+```bash
+python train.py \
+  --base ../configs/training_512_v1.0/train_config.yaml \
+  --train \
+  --name train \
+  --logdir ../model_savepath \
+  --devices 1 \
+  lightning.trainer.num_nodes=1
+```
 
 ## Inference
-Run the inference script with the following arguments:
+
 ```bash
 python inference.py \
   --seed 123 \
@@ -58,16 +95,32 @@ python inference.py \
   --interp
 ```
 
-| Argument                          | Description                                                                 |
-|-----------------------------------|-----------------------------------------------------------------------------|
-| `--seed`                          | Random seed for result reproducibility (fixed to 123)                        |
-| `--ckpt_path`                     | Path to the pre-trained model checkpoint file                               |
-| `--config`                        | Path to the inference configuration YAML file                               |
-| `--savedir`                       | Directory to save generated video frames/results                            |
-| `--height`/`--width`              | Resolution of the generated cartoon frames (320×512)                        |
-| `--video_length`                  | Total number of frames in the generated video sequence                      |
-| `--frame_stride`                  | Stride between consecutive frames in interpolation                          |
-| `--unconditional_guidance_scale`  | Guidance scale for unconditional generation (7.5)                           |
-| `--ddim_steps`                    | Number of DDIM sampling steps (50)                                           |
-| `--perframe_ae`                   | Use per-frame autoencoder for feature processing                            |
-| `--text_input`                    | Enable text prompt-based generation                                          |
+| Argument | Description |
+|----------|-------------|
+| `--seed` | Random seed for reproducibility (fixed to **123**) |
+| `--ckpt_path` | Path to the pretrained checkpoint |
+| `--config` | Inference configuration file |
+| `--savedir` | Output directory |
+| `--height` / `--width` | Input resolution (320 × 512) |
+| `--video_length` | Number of generated frames |
+| `--frame_stride` | Frame stride |
+| `--unconditional_guidance_scale` | Classifier-free guidance scale |
+| `--ddim_steps` | Number of DDIM sampling steps |
+| `--perframe_ae` | Enable per-frame autoencoder |
+| `--text_input` | Enable text-conditioned generation |
+
+## Reproducibility
+
+The repository includes:
+
+- Training and inference scripts
+- Configuration files
+- Environment specification (`requirements.txt`)
+- Dataset split files
+- Evaluation scripts
+- Random seed used in the paper (`123`)
+- Sample outputs for qualitative comparison
+
+## Citation
+
+If you find this repository useful, please consider citing our paper.
