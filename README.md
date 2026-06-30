@@ -121,6 +121,10 @@ The repository includes:
 - Random seed used in the paper (`123`)
 - Sample outputs for qualitative comparison
 
+The quantitative evaluation metrics (e.g., FVD, SSIM, PSNR, LPIPS, and CLIP-based metrics) are computed using the publicly available evaluation toolkit:
+
+https://github.com/JunyaoHu/common_metrics_on_video_quality
+
 ## Citation
 
 If you find this repository useful, please consider citing our paper.
