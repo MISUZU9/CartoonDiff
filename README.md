@@ -134,3 +134,9 @@ https://github.com/JunyaoHu/common_metrics_on_video_quality
 ## Citation
 
 If you find this repository useful, please consider citing our paper.
+
+## License
+
+This project is released for **non-commercial research and educational purposes only** under the CartoonDiff Academic Research License.
+
+The accompanying dataset resources and pretrained model weights are provided solely to facilitate academic research and reproducibility. Please ensure that your use of these resources complies with all applicable laws, regulations, and any relevant third-party rights.
