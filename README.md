@@ -61,7 +61,7 @@ Link: https://pan.baidu.com/s/1Nt-gz69iRv7S4rm8HrVfvg?pwd=f8s6
 ## Training
 
 ```bash
-python train.py \
+python ./main/train.py \
   --base ../configs/training_512_v1.0/train_config.yaml \
   --train \
   --name train \
