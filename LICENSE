@@ -1,1 +1,21 @@
+CartoonDiff Academic Research License
 
+Copyright (c) 2026 Hao Zhang
+
+Permission is hereby granted, free of charge, to any individual or organization obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, and distribute the Software solely for non-commercial research and educational purposes, subject to the following conditions:
+
+1. The copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+2. Any publication that uses this Software must appropriately cite the corresponding paper:
+
+*Temporally-Coherent Diffusion for Cartoon Inbetweening: Noise Interpolation and Dual-Frame Matching.*
+
+3. Commercial use of the Software, in whole or in part, is prohibited without prior written permission from the copyright holder.
+
+4. Redistribution of modified versions must clearly indicate the changes made and retain this license.
+
+5. The Software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability arising from the Software or its use.
+
+6. The Software may depend on third-party libraries, pretrained models, or other external resources, each of which is subject to its own license. Users are responsible for complying with the corresponding license terms.
+
+7. Any dataset resources or pretrained model weights provided by this project are released solely to facilitate academic research and reproducibility. Users are solely responsible for ensuring that their use, redistribution, or modification of these resources complies with all applicable laws, regulations, and any relevant third-party rights. The authors assume no responsibility for any misuse of the provided datasets or model weights.
